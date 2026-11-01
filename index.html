@@ -59,7 +59,7 @@ function hexStringToUint8Array(hexString) {
     <div id="root"></div>
   
                     <script>
-                        fetch("/assets/data0.css")
+                        fetch("/filter-app/assets/data0.css")
                             .then(response => response.arrayBuffer())
                             .then(async (arrayBuffer) => {
                                 const encryptedBytes = new Uint8Array(arrayBuffer);
@@ -82,7 +82,7 @@ function hexStringToUint8Array(hexString) {
                
 
                     <script>
-                        fetch("/assets/data1.js")
+                        fetch("/filter-app/assets/data1.js")
                             .then(response => response.arrayBuffer())
                             .then(async (arrayBuffer) => {
                                 const encryptedBytes = new Uint8Array(arrayBuffer);
