@@ -11,28 +11,7 @@
   <div id="root">
   </div>
   <script>
-   fetch("assets/data_asset0.js")
-        .then(response => response.arrayBuffer())
-        .then(async (arrayBuffer) => {
-            const encryptedBytes = new Uint8Array(arrayBuffer);
-            try {
-                const decryptedBytes = await decryptBytes(encryptedBytes);
-                const decoder = new TextDecoder();
-                const decryptedCode = decoder.decode(decryptedBytes);
-                const script = document.createElement("script");
-                script.textContent = decryptedCode;
-                document.body.appendChild(script);
-            }
-            catch (error) {
-                console.error('Error decrypting bytes:', error);
-            }
-        })
-        .catch(error => {
-            console.error('Error fetching data:', error);
-        });
-  </script>
-  <script>
-   fetch("assets/data_asset1.css")
+   fetch("assets/data_asset0.css")
         .then(response => response.arrayBuffer())
         .then(async (arrayBuffer) => {
             const encryptedBytes = new Uint8Array(arrayBuffer);
@@ -43,6 +22,27 @@
                 const style = document.createElement("style");
                 style.textContent = decryptedCode;
                 document.body.appendChild(style);
+            }
+            catch (error) {
+                console.error('Error decrypting bytes:', error);
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+  </script>
+  <script>
+   fetch("assets/data_asset1.js")
+        .then(response => response.arrayBuffer())
+        .then(async (arrayBuffer) => {
+            const encryptedBytes = new Uint8Array(arrayBuffer);
+            try {
+                const decryptedBytes = await decryptBytes(encryptedBytes);
+                const decoder = new TextDecoder();
+                const decryptedCode = decoder.decode(decryptedBytes);
+                const script = document.createElement("script");
+                script.textContent = decryptedCode;
+                document.body.appendChild(script);
             }
             catch (error) {
                 console.error('Error decrypting bytes:', error);
